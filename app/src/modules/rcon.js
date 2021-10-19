@@ -26,8 +26,8 @@ class rcon {
     init() {
         for(let item = 0; item < config.servers.length; item++){
             this.broadcasters[`${config.servers[item].ip}:${config.servers[item].port}`] = null;
-            this.initServer(`${config.servers[item].ip}:${config.servers[item].port}`, config.servers[item].password);
-            setInterval(() => this.healthcheck(`${config.servers[item].ip}:${config.servers[item].port}`, config.servers[item].password), 5000);
+            this.initServer(`${config.servers[item].ip}:${config.servers[item].port}`, config.servers[item].rcon_password);
+            setInterval(() => this.healthcheck(`${config.servers[item].ip}:${config.servers[item].port}`, config.servers[item].rcon_password), 5000);
         }
     }
 
